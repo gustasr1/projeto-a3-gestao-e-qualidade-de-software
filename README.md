@@ -38,7 +38,7 @@ Este projeto acadêmico tem como objetivo refatorar um código legado, aplicando
 - Documentação Oficial Java (https://docs.oracle.com/en/java/)
 
 ## 🎓Conclusão
-Este projeto demonstra a importância de boas práticas de programação para transformar um código legado em uma base sustentável, facilitando futuras manutenções e colaborações.# 🎓 Conclusão
+Este projeto demonstra a importância de boas práticas de programação para transformar um código legado em uma base sustentável, facilitando futuras manutenções e colaborações.#
 
 ---
 
