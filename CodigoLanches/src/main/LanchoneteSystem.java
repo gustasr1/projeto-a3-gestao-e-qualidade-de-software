@@ -10,11 +10,30 @@ public class LanchoneteSystem {
     private Map<Integer, Produto> cardapio;
     private double totalPedido;
     private Administrador admin;
+    private Map<String, Usuario> usuarios; // Mapa de usuários (login -> Usuario)
 
     public LanchoneteSystem() {
         inicializarCardapio();
+        inicializarUsuarios(); // Cadastra usuários iniciais
         totalPedido = 0;
         admin = new Administrador(cardapio); //Inicia o modo admin
+    }
+
+    private void inicializarUsuarios() {
+        usuarios = new HashMap<>();
+        // Usuário admin (login: admin, senha: admin123)
+        usuarios.put("admin", new Usuario("admin", "admin123", true));
+        // Usuário comum (opcional)
+        usuarios.put("cliente", new Usuario("cliente", "cliente123", false));
+    }
+
+    // Método para autentificação
+    private Usuario autenticar(String login, String senha) {
+        Usuario usuario = usuarios.get(login);
+        if (usuario != null && usuario.getSenha().equals(senha)) {
+            return usuario;
+        }
+        return null; 
     }
 
     private void inicializarCardapio() {
@@ -32,15 +51,32 @@ public class LanchoneteSystem {
         while (codigo != 0) {
             codigo = exibirMenuEObterOpcao();
 
-            if(codigo == 99) {
-                admin.menuAdministrador(); // Ativa o modo administrador
+            if (codigo == 99) {
+                // Solicita login antes de acessar o admin
+                if (autenticarAdmin()) {
+                     admin.menuAdministrador(); // Ativa o modo administrador
+                }
             } else if (codigo != 0 && cardapio.containsKey(codigo)) {
                 processarPedido(codigo);
             } else if (codigo != 0) {
                 JOptionPane.showMessageDialog(null, "Opção inválida");
             }
+    }
+}
+
+// Método para autenticar admin
+    private boolean autenticarAdmin() {
+        String login = JOptionPane.showInputDialog("Digite o login:");
+        String senha = JOptionPane.showInputDialog("Digite a senha:");
+
+        Usuario usuario = autenticar(login, senha);
+        if (usuario != null && usuario.isAdmin()) {
+            return true;
+        }   else {
+            JOptionPane.showMessageDialog(null, "Acesso negado. Login ou senha incorretos.");
+            return false;
         }
-  }
+    }
 
     private int exibirMenuEObterOpcao() {
         StringBuilder menu = new StringBuilder("----MENU----\n");
