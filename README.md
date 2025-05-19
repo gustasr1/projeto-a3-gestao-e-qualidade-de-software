@@ -48,4 +48,4 @@ Entre em contato: [santiago.gustav@hotmail.com]
  
 **Data de Entrega:** 01/06/2025
 
-✏️ *Documentação gerada pelo time. Atualizações são bem-vindas via pull request!*
+✏️ *Documentação gerada pelo time.
