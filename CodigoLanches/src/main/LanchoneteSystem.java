@@ -9,10 +9,12 @@ public class LanchoneteSystem {
 
     private Map<Integer, Produto> cardapio;
     private double totalPedido;
+    private Administrador admin;
 
     public LanchoneteSystem() {
         inicializarCardapio();
         totalPedido = 0;
+        admin = new Administrador(cardapio); //Inicia o modo admin
     }
 
     private void inicializarCardapio() {
@@ -29,14 +31,16 @@ public class LanchoneteSystem {
         
         while (codigo != 0) {
             codigo = exibirMenuEObterOpcao();
-            
-            if (codigo != 0 && cardapio.containsKey(codigo)) {
+
+            if(codigo == 99) {
+                admin.menuAdministrador(); // Ativa o modo administrador
+            } else if (codigo != 0 && cardapio.containsKey(codigo)) {
                 processarPedido(codigo);
             } else if (codigo != 0) {
                 JOptionPane.showMessageDialog(null, "Opção inválida");
             }
         }
-    }
+  }
 
     private int exibirMenuEObterOpcao() {
         StringBuilder menu = new StringBuilder("----MENU----\n");
@@ -82,6 +86,9 @@ public class LanchoneteSystem {
     public static void main(String[] args) {
         new LanchoneteSystem().executar();
     }
+
+
+
 }
 
 
