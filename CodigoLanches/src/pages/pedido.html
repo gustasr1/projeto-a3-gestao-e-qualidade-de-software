@@ -7,75 +7,140 @@
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="../assets/css/style.css">
     </head>
+
     <body>
         <div id="header"></div>
 
-        <div class="container mt-5">
-            <h2 class="text-center mb-4">Monte seu Pedido</h2>
-            <form id="pedidoForm">
-                <div class="accordion" id="pedidoAccordion">
+        <h2 class="mb-4 text-center" style="padding-top: 40px;">Monte seu Pedido</h2>
 
-                    <div class="card mb-3">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col-md-8">
-                                <div class="card-body d-flex flex-column justify-content-between h-100">
-                                    <h5 class="card-title mb-2">
-                                        <button class="btn p-0 text-left" type="button" data-toggle="collapse" data-target="#pizzaInfo" aria-expanded="false" aria-controls="pizzaInfo"
-                                        style="color: black; text-decoration: none; font-weight: bold;">
-                                        Pizza
-                                        </button>
-                                    </h5>
-                                    <div class="collapse" id="pizzaInfo">
-                                        <p class="card-text">
-                                        Pizza grande com até 3 sabores + borda recheada + refrigerante 1L.
-                                        </p>
-                                        <textarea class="form-control mb-3" id="obsPizza" rows="2" placeholder="Digite sua observação, ex: sem cebola"></textarea>
+        <main>
+            <div class="container my-4">
+                <div class="listaPedidos" id="listaPedidos">
+                    <div class="card mb-3 pedido-card" onclick="toggleDetalhes(this)">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="card-title mb-0">Torta de Frango com Massa Podre</h5>
+                                    <p class="card-text mb-0">R$ 49,90</p>
+                                </div>
+                                <div class="imagem-controle">
+                                    <div class="controle d-flex align-items-center mt-2" onclick="event.stopPropagation();">
+                                        <button class="btn btn-sm btn-danger mr-2" onclick="alterarQuantidade(this, -1)">-</button>
+                                        <input type="text" class="form-control form-control-sm text-center" value="0" style="width: 50px;" readonly>
+                                        <button class="btn btn-sm btn-success ml-2" onclick="alterarQuantidade(this, 1)">+</button>
                                     </div>
-                                    <p class="card-text mt-auto"><strong>R$ 49,90</strong></p>
+                                    <img src="../assets/images/tortaFrango.jpg" alt="Pizza" class="pedido-imagem">
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <img src="../assets/images/pizza.jpg" class="card-img" alt="Imagem de Pizza">
+    
+                            <div class="pedido-detalhes mt-2">
+                                <hr>
+                                <p>Uma torta recheada com frango desfiado, milho, ervilha e requeijão cremoso, com aquela massa quebradiça de vó que derrete na boca.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-header" id="headingHamburguer">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseHamburguer" aria-expanded="false" aria-controls="collapseHamburguer">
-                                    🍔 Hamburguer
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapseHamburguer" class="collapse" aria-labelledby="headingHamburguer" data-parent="#pedidoAccordion">
-                            <div class="card-body">
-                                <textarea class="form-control" id="obsHamburguer" rows="2" placeholder="Digite sua observação"></textarea>
+                    <div class="card mb-3 pedido-card" onclick="toggleDetalhes(this)">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="card-title mb-0">Feijoada Completa</h5>
+                                    <p class="card-text mb-0">R$ 49,90</p>
+                                </div>
+                                <div class="imagem-controle">
+                                    <div class="controle d-flex align-items-center mt-2" onclick="event.stopPropagation();">
+                                        <button class="btn btn-sm btn-danger mr-2" onclick="alterarQuantidade(this, -1)">-</button>
+                                        <input type="text" class="form-control form-control-sm text-center" value="0" style="width: 50px;" readonly>
+                                        <button class="btn btn-sm btn-success ml-2" onclick="alterarQuantidade(this, 1)">+</button>
+                                    </div>
+                                    <img src="../assets/images/feijoada.jpg" alt="Pizza" class="pedido-imagem">
+                                </div>
+                            </div>
+
+                            <div class="pedido-detalhes mt-2">
+                                <hr>
+                                <p>Clássica feijoada com carne de porco, paio, linguiça, acompanhada de arroz branco, couve refogada, farofa e laranja fatiada.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-header" id="headingSalada">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSalada" aria-expanded="false" aria-controls="collapseSalada">
-                                    🥗 Salada
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapseSalada" class="collapse" aria-labelledby="headingSalada" data-parent="#pedidoAccordion">
-                            <div class="card-body">
-                                <textarea class="form-control" id="obsSalada" rows="2" placeholder="Digite sua observação"></textarea>
+                    <div class="card mb-3 pedido-card" onclick="toggleDetalhes(this)">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="card-title mb-0">Galinhada Caipira</h5>
+                                    <p class="card-text mb-0">R$ 49,90</p>
+                                </div>
+                                <div class="imagem-controle">
+                                    <div class="controle d-flex align-items-center mt-2" onclick="event.stopPropagation();">
+                                        <button class="btn btn-sm btn-danger mr-2" onclick="alterarQuantidade(this, -1)">-</button>
+                                        <input type="text" class="form-control form-control-sm text-center" value="0" style="width: 50px;" readonly>
+                                        <button class="btn btn-sm btn-success ml-2" onclick="alterarQuantidade(this, 1)">+</button>
+                                    </div>
+                                    <img src="../assets/images/galinhada.jpg" alt="Pizza" class="pedido-imagem">
+                                </div>
+                            </div>
+
+                            <div class="pedido-detalhes mt-2">
+                                <hr>
+                                <p>Arroz cozido com pedaços de frango caipira, legumes (como cenoura e pimentão), cheiro-verde e temperos da roça. Bem temperada e suculenta, é um prato cheio de memória afetiva.</p>
                             </div>
                         </div>
                     </div>
 
+                    <div class="card mb-3 pedido-card" onclick="toggleDetalhes(this)">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="card-title mb-0">Escondidinho de Carne Seca com Mandioca</h5>
+                                    <p class="card-text mb-0">R$ 49,90</p>
+                                </div>
+                                <div class="imagem-controle">
+                                    <div class="controle d-flex align-items-center mt-2" onclick="event.stopPropagation();">
+                                        <button class="btn btn-sm btn-danger mr-2" onclick="alterarQuantidade(this, -1)">-</button>
+                                        <input type="text" class="form-control form-control-sm text-center" value="0" style="width: 50px;" readonly>
+                                        <button class="btn btn-sm btn-success ml-2" onclick="alterarQuantidade(this, 1)">+</button>
+                                    </div>
+                                    <img src="../assets/images/escondidinho.jpg" alt="Pizza" class="pedido-imagem">
+                                </div>
+                            </div>
+
+                            <div class="pedido-detalhes mt-2">
+                                <hr>
+                                <p>Purê de mandioca cremoso com recheio de carne seca refogada na manteiga de garrafa, gratinado com queijo coalho por cima.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-3 pedido-card" onclick="toggleDetalhes(this)">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="card-title mb-0">Ambrosia Caseira</h5>
+                                    <p class="card-text mb-0">R$ 49,90</p>
+                                </div>
+                                <div class="imagem-controle">
+                                    <div class="controle d-flex align-items-center mt-2" onclick="event.stopPropagation();">
+                                        <button class="btn btn-sm btn-danger mr-2" onclick="alterarQuantidade(this, -1)">-</button>
+                                        <input type="text" class="form-control form-control-sm text-center" value="0" style="width: 50px;" readonly>
+                                        <button class="btn btn-sm btn-success ml-2" onclick="alterarQuantidade(this, 1)">+</button>
+                                    </div>
+                                    <img src="../assets/images/ambrosia.jpg" alt="Pizza" class="pedido-imagem">
+                                </div>
+                            </div>
+
+                            <div class="pedido-detalhes mt-2">
+                                <hr>
+                                <p>Doce tradicional feito com leite, ovos, açúcar e canela. Ótima opção de sobremesa que remete ao interior e à casa da vó.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </main>
 
-                <div class="text-center mt-4">
-                    <button type="submit" class="btn btn-primary btn-lg">Finalizar Pedido</button>
-                </div>
-            </form>
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary btn-lg">Finalizar Pedido</button>
         </div>
 
         <div id="footer" class="mt-5"></div>

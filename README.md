@@ -3,7 +3,7 @@
 ## 📌 Informações Gerais
 **Disciplina:** Engenharia de Software   
 **Semestre:** 2025.1  
-**Equipe:** [Gustavo Santiago,](https://github.com/gustasr1) [Marcio Schatt,](https://github.com/MarcioSchatt) [Meireelen,](https://github.com/Meireelen) [MArcelo,](https://github.com/marcelosifr) [
+**Equipe:** [Gustavo Santiago,](https://github.com/gustasr1) [Marcio Schatt,](https://github.com/MarcioSchatt) [Meireelen,](https://github.com/Meireelen) [Marcelo,](https://github.com/marcelosifr) [
 Caio Veiga,](https://github.com/cBR25)  
 **Professor:** Henrique Poyatos, Arquelau Pasta 
 

@@ -276,3 +276,153 @@ button {
 .container.right-panel-active .overlay-right {
     transform: translateX(20%);
 }
+
+.pedido-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.pedido-imagem {
+    width: 100px;
+    height: 80px;
+    border-radius: 8px;
+}
+
+.pedido-detalhes {
+    display: none;
+}
+
+.pedido-card.expanded .pedido-detalhes {
+    display: block;
+}
+
+.listaPedidos {
+    padding-top: 10px;
+}
+
+.imagem-controle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.controle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.controle button {
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.controle input {
+    width: 30px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.section-title {
+    font-weight: bold;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+.form-section {
+    margin-bottom: 30px;
+}
+
+.btn-orange {
+    background-color: #d58512;
+    color: white;
+    border: none;
+}
+
+.hero-section {
+    background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') no-repeat center center/cover;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.content-section {
+    background-color: #f1f3f5;
+    padding: 60px 20px;
+}
+
+.about-text {
+    font-size: 1.1rem;
+}
+
+.image-gallery img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.cart-item {
+    border-bottom: 1px solid #dee2e6;
+    padding: 1rem 0;
+}
+
+.cart-total {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.option-box {
+    border: 1px solid #d58512;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.option-box h5 {
+    margin: 0;
+    padding: 1rem;
+    background-color: #d58512;
+    color: white;
+}
+
+.option-body {
+    padding: 1rem;
+}
+
+.total-box {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.btn-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.payment-group {
+    border-top: 1px solid #ddd;
+    padding: 1rem;
+}
+
+.payment-group:hover {
+    background-color: #f8f9fa;
+    cursor: pointer;
+}

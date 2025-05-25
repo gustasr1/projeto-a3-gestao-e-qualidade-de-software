@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sobre Nós</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../assets/css/style.css"/>
+    </head>
+
+    <body>
+        <div id="header"></div>
+
+        <h2 class="mb-4 text-center" style="padding-top: 40px;">Carrinho</h2>
+
+        <div class="container py-5">
+            <div id="cart-items"></div>
+            <div class="d-flex justify-content-between mt-4">
+                <span class="cart-total">Total: R$ <span id="cart-total">0.00</span></span>
+                <button class="btn btn-success">Finalizar Compra</button>
+            </div>
+        </div>
+
+        <script>
+            const cart = [
+            { id: 1, nome: "Produto A", preco: 50.00, quantidade: 1 },
+            { id: 2, nome: "Produto B", preco: 35.00, quantidade: 2 }
+            ];
+
+            function renderCart() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            cartItemsContainer.innerHTML = '';
+
+            cart.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'cart-item row align-items-center';
+                itemDiv.innerHTML = `
+                <div class="col-md-6">
+                    <strong>${item.nome}</strong>
+                </div>
+                <div class="col-md-2">
+                    R$ ${item.preco.toFixed(2)}
+                </div>
+                <div class="col-md-2">
+                    <input type="number" min="1" class="form-control" value="${item.quantidade}" onchange="updateQuantity(${item.id}, this.value)">
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-danger btn-sm" onclick="removeItem(${item.id})">Remover</button>
+                </div>
+                `;
+                cartItemsContainer.appendChild(itemDiv);
+            });
+
+            updateTotal();
+            }
+
+            function updateQuantity(id, newQty) {
+            const item = cart.find(i => i.id === id);
+            if (item && newQty > 0) {
+                item.quantidade = parseInt(newQty);
+                updateTotal();
+            }
+            }
+
+            function removeItem(id) {
+            const index = cart.findIndex(i => i.id === id);
+            if (index !== -1) {
+                cart.splice(index, 1);
+                renderCart();
+            }
+            }
+
+            function updateTotal() {
+            const total = cart.reduce((sum, item) => sum + item.preco * item.quantidade, 0);
+            document.getElementById('cart-total').textContent = total.toFixed(2);
+            }
+
+            renderCart();
+        </script>
+
+        <div id="footer" class="mt-5"></div>
+
+        <script src="../assets/js/script.js"></script>
+    </body>
+</html>
