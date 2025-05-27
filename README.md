@@ -1,10 +1,9 @@
 # 🔧 Projeto Acadêmico de Código Legado com Clean Code
 
 ## 📌 Informações Gerais
-**Disciplina:** Engenharia de Software   
+**Disciplina:** Sistemas de Informações  
 **Semestre:** 2025.1  
-**Equipe:** [Gustavo Santiago,](https://github.com/gustasr1) [Marcio Schatt,](https://github.com/MarcioSchatt) [Meireelen,](https://github.com/Meireelen) [Marcelo,](https://github.com/marcelosifr) [
-Caio Veiga,](https://github.com/cBR25)  
+**Equipe:** [Gustavo Santiago,](https://github.com/gustasr1) [Marcio Schatt,](https://github.com/MarcioSchatt) [Meireelen,](https://github.com/Meireelen) [Marcelo,](https://github.com/marcelosifr) [Caio Veiga,](https://github.com/cBR25)  
 **Professor:** Henrique Poyatos, Arquelau Pasta 
 
 ## 📝 Descrição do Projeto
@@ -35,7 +34,6 @@ Este projeto acadêmico tem como objetivo refatorar um código legado, aplicando
 
 - Livro *"Clean Code"* (Robert C. Martin).
 - Artigo *"Refactoring Guru"* (https://refactoring.guru/design-patterns).
-- Documentação Oficial Java (https://docs.oracle.com/en/java/)
 
 ## 🎓Conclusão
 Este projeto demonstra a importância de boas práticas de programação para transformar um código legado em uma base sustentável, facilitando futuras manutenções e colaborações.#
@@ -46,6 +44,6 @@ Este projeto demonstra a importância de boas práticas de programação para tr
 Entre em contato: [santiago.gustav@hotmail.com]
 
  
-**Data de Entrega:** 01/06/2025
+**Data de Entrega:** 08/06/2025
 
 ✏️ *Documentação gerada pelo time.
