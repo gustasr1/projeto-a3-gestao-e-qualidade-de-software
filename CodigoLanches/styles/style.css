@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #ffffff;
+}
+
+header {
+    background-image: url('../assets/tortaFrangoBG.jpg');
+}
