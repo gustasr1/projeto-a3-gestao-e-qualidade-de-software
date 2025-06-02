@@ -3,7 +3,7 @@
 ## 📌 Informações Gerais
 **Disciplina:** Sistemas de Informações  
 **Semestre:** 2025.1  
-**Equipe:** [Gustavo Santiago,](https://github.com/gustasr1) [Marcio Schatt,](https://github.com/MarcioSchatt) [Meireelen,](https://github.com/Meireelen) [Marcelo,](https://github.com/marcelosifr) [Caio Veiga,](https://github.com/cBR25)  
+**Equipe:** [Gustavo Santiago,](https://github.com/gustasr1) [Marcio Schatt,](https://github.com/MarcioSchatt) [Meireelen,](https://github.com/Meireelen) [Marcelo,](https://github.com/marcelosifr) [Caio Veiga,](https://github.com/cBR25) [Alan de Mello,](https://github.com/AlanJR99) 
 **Professor:** Henrique Poyatos, Arquelau Pasta 
 
 ## 📝 Descrição do Projeto
