@@ -11,16 +11,18 @@ const addressWarn = document.getElementById("address-warn")
 
 let cart = [];
 
-cartBtn.addEventListener("click", function() {
+if(cartBtn) {
+    cartBtn.addEventListener("click", function() {
     updateCartModal();
     cartModal.style.display = "flex"
-})
+});
+}
 
-cartModal.addEventListener("click", function(event) {
-    if(event.target === cartModal){
-        cartModal.style.display = "none"
-    }
-})
+if (closeModalBtn) {
+  closeModalBtn.addEventListener("click", function () {
+    cartModal.style.display = "none";
+  });
+}
 
 closeModalBtn.addEventListener("click", function() {
     cartModal.style.display = "none"
@@ -112,16 +114,19 @@ function removeItemCart(name){
     }
 }
 
-addressInput.addEventListener("input", function(event) {
+if (addressInput) {
+  addressInput.addEventListener("input", function(event) {
     let inputValue = event.target.value;
 
     if(inputValue !== ""){
         addressInput.classList.remove("border-red-500")
         addressWarn.classList.add("hidden")
     }
-})
+  });
+}
 
-checkoutBtn.addEventListener("click", function() {
+if (checkoutBtn) {
+  checkoutBtn.addEventListener("click", function() {
     const isOpen = checkRestaurantOpen();
     if(!isOpen){
         Toastify({
@@ -157,7 +162,8 @@ checkoutBtn.addEventListener("click", function() {
 
     cart = [];
     updateCartModal();
-})
+  });
+}
 
 function checkRestaurantOpen(){
     const data = new Date();
@@ -165,13 +171,24 @@ function checkRestaurantOpen(){
     return hora >= 18 && hora < 22;
 }
 
-const spanItem = document.getElementById("date-span")
+const spanItem = document.getElementById("date-span");
 const isOpen = checkRestaurantOpen();
 
-if(isOpen){
+if (spanItem) {
+  if (isOpen) {
     spanItem.classList.remove("bg-red-500");
     spanItem.classList.add("bg-green-600");
-}else{
+  } else {
     spanItem.classList.add("bg-red-500");
     spanItem.classList.remove("bg-green-600");
+  }
 }
+
+
+module.exports = {
+  addToCart,
+  removeItemCart,
+  checkRestaurantOpen,
+  cart
+};
+// Exports para testes
