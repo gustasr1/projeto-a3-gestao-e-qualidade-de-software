@@ -38,6 +38,7 @@ Este projeto tem como foco a **refatoração de um código legado**, utilizando 
 - Testes Unitários: Jest
 - Versionamento: Git + GitHub
 - Documentação: Markdown (README), Comentários no código, JavaScript Doc
+```
 
 ## 🔗 Referências
 
